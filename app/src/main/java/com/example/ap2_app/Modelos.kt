@@ -17,5 +17,6 @@ data class Mundo(
     val nome: String,
     val imagemHeroi: Int,
     val descricao: String,
-    val galeria: List<Int>
+    val galeria: List<Int>,
+    val perigo: Float = 0.0f
 )

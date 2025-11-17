@@ -1,134 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/pearl"
-    tools:context=".DetalhesResultados">
+    tools:context="com.example.ap2_app.DetalhesResultados">
+
+    <TextView
+        android:id="@+id/tvTituloDetalhes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Detalhes do Mundo"
+        android:textColor="@color/teal"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloDetalhes">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/tvNomeDetalhe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nome do Mundo"
+                android:textColor="@color/black"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDescricao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Descrição detalhada do mundo aparecerá aqui..."
+                android:textColor="#666666"
+                android:textSize="16sp"
+                android:lineSpacingExtra="4dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Nível de Perigo"
+                android:textStyle="bold"
+                android:textColor="@color/teal"/>
+
+            <RatingBar
+                android:id="@+id/ratingPerigo"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:numStars="5"
+                android:rating="3.5"
+                android:stepSize="0.5"
+                android:progressTint="#FFD700" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp"
+                android:text="Galeria de Fotos"
+                android:textStyle="bold"
+                android:textColor="@color/teal"/>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="12dp"
+                        android:layout_marginEnd="12dp">
+                        <ImageView
+                            android:id="@+id/ivGaleria1"
+                            android:layout_width="200dp"
+                            android:layout_height="140dp"
+                            android:scaleType="centerCrop"
+                            android:src="@color/teal" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="12dp"
+                        android:layout_marginEnd="12dp">
+                        <ImageView
+                            android:id="@+id/ivGaleria2"
+                            android:layout_width="200dp"
+                            android:layout_height="140dp"
+                            android:scaleType="centerCrop"
+                            android:src="@color/teal" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="12dp">
+                        <ImageView
+                            android:id="@+id/ivGaleria3"
+                            android:layout_width="200dp"
+                            android:layout_height="140dp"
+                            android:scaleType="centerCrop"
+                            android:src="@color/teal" />
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btHome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/button_bordered_background"
+        android:backgroundTint="@color/teal"
+        android:text="Voltar ao Início"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btShare"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
         android:clickable="true"
-        android:backgroundTint="@color/tangerine"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/open_in_new" />
-
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chipGroup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="70dp"
+        android:src="@android:drawable/ic_menu_search"
+        app:backgroundTint="@color/tangerine"
         app:layout_constraintBottom_toTopOf="@+id/btHome"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
-        tools:layout_editor_absoluteX="0dp">
-
-        <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Voo" />
-
-        <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Força Sobre-Humana" />
-
-        <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kryptoniano" />
-
-    </com.google.android.material.chip.ChipGroup>
-
-    <HorizontalScrollView
-        android:id="@+id/horizontalScrollView"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginBottom="70dp"
-        app:layout_constraintBottom_toTopOf="@+id/tvDescricao"
-        app:layout_constraintTop_toBottomOf="@+id/tvNomeMundo"
-        tools:layout_editor_absoluteX="0dp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imFoto1"
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="8dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/peterparkerspiderman" />
-
-            <ImageView
-                android:id="@+id/imFoto2"
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="8dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/peterparkerspiderman" />
-
-            <ImageView
-                android:id="@+id/imFoto3"
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/peterparkerspiderman" />
-
-
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <TextView
-        android:id="@+id/tvNomeMundo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="70dp"
-        android:text="Galeria"
-        android:textAppearance="?attr/textAppearanceHeadline6"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.323"
-        android:paddingTop="90dp"/>
-
-    <TextView
-        android:id="@+id/tvDescricao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
-        android:layout_marginBottom="70dp"
-        android:text="TextView"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/chipGroup"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/btHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="53dp"
-        android:backgroundTint="@color/teal"
-        android:text="Home"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chipGroup"
-        app:layout_constraintVertical_bias="0.0" />
+        app:tint="@color/white" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

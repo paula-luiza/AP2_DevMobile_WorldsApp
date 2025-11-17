@@ -5,6 +5,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.RatingBar
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -25,10 +26,13 @@ class DetalhesResultados : AppCompatActivity() {
         val btHome = findViewById<Button>(R.id.btHome)
         val heroiVencedor = logica.getResultadoFinal(placarFinal)
         val tvDescricao = findViewById<TextView>(R.id.tvDescricao)
-        val tvNome = findViewById<TextView>(R.id.tvNomeMundo)
-        val ivGaleria1 = findViewById<ImageView>(R.id.imFoto1)
-        val ivGaleria2 = findViewById<ImageView>(R.id.imFoto2)
-        val ivGaleria3 = findViewById<ImageView>(R.id.imFoto3)
+        val tvNome = findViewById<TextView>(R.id.tvNomeDetalhe)
+        val ivGaleria1 = findViewById<ImageView>(R.id.ivGaleria1)
+        val ivGaleria2 = findViewById<ImageView>(R.id.ivGaleria2)
+        val ivGaleria3 = findViewById<ImageView>(R.id.ivGaleria3)
+        val ratingBar = findViewById<RatingBar>(R.id.ratingPerigo)
+
+        ratingBar.rating = heroiVencedor.perigo
 
         if (heroiVencedor.galeria.size >= 3) {
             ivGaleria1.setImageResource(heroiVencedor.galeria[0])
@@ -43,11 +47,6 @@ class DetalhesResultados : AppCompatActivity() {
             val compartilhar = Intent(Intent.ACTION_VIEW)
             compartilhar.data = Uri.parse("https://www.google.com/search?q=" + heroiVencedor.nome)
             startActivity(compartilhar)
-        }
-
-        btHome.setOnClickListener{
-            val home = Intent(this, MainActivity::class.java)
-            startActivity(home)
         }
 
         btHome.setOnClickListener {

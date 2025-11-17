@@ -17,14 +17,14 @@ class Resultados : AppCompatActivity() {
         val placarFinal = intent.getIntArrayExtra("PLACAR_FINAL")
         val nomeUsuario = intent.getStringExtra("NOME_USUARIO") ?: ""
         val btMais = findViewById<Button>(R.id.btMore)
-        val nomeResultado = findViewById<TextView>(R.id.tvResultado2)
-        val titulo = findViewById<TextView>(R.id.tvResultado)
-        val imagemResultado = findViewById<ImageView>(R.id.ivImagem)
+        val nomeResultado = findViewById<TextView>(R.id.tvResultado)
+       // val titulo = findViewById<TextView>(R.id.tvResultado)
+        val imagemResultado = findViewById<ImageView>(R.id.ivImagemResultado)
         val btInicio = findViewById<Button>(R.id.btInicio)
 
         if (placarFinal != null) {
             val heroiVencedor = logica.getResultadoFinal(placarFinal)
-            titulo.text = nomeUsuario +", seu mundo ideal para explorar seria..."
+          //  titulo.text = nomeUsuario +", seu mundo ideal para explorar seria..."
             nomeResultado.text = heroiVencedor.nome
             imagemResultado.setImageResource(heroiVencedor.imagemHeroi)
         } else {

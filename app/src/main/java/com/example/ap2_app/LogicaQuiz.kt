@@ -4,21 +4,21 @@ class LogicaQuiz {
 
     val mundos = listOf(
         Mundo(1, "Hyrule", R.drawable.hyrule1, "Um reino de lendas, espadas e magia antiga.",
-            listOf(R.drawable.hyrule4, R.drawable.hyrule2, R.drawable.hyrule3)),
+            listOf(R.drawable.hyrule4, R.drawable.hyrule2, R.drawable.hyrule3), 4.0f),
         Mundo(2, "Hogwarts", R.drawable.hogwarts1, "A escola de magia e bruxaria mais famosa.",
-            listOf(R.drawable.hogwarts2, R.drawable.hogwarts3, R.drawable.hogwarts4)),
+            listOf(R.drawable.hogwarts2, R.drawable.hogwarts3, R.drawable.hogwarts4), 2.5f),
         Mundo(3, "Tatooine", R.drawable.tatooine1, "Um planeta deserto com dois sóis e muita areia.",
-            listOf(R.drawable.tatooine2, R.drawable.tatooine3, R.drawable.tatooine4)),
+            listOf(R.drawable.tatooine2, R.drawable.tatooine3, R.drawable.tatooine4), 3.5f),
         Mundo(4, "Pandora", R.drawable.pandora1, "Florestas bioluminescentes e montanhas flutuantes.",
-            listOf(R.drawable.pandora2, R.drawable.pandora3, R.drawable.pandora4)),
+            listOf(R.drawable.pandora2, R.drawable.pandora3, R.drawable.pandora4), 4.5f),
         Mundo(5, "Reino do Cogumelo", R.drawable.mushroom1, "Um mundo colorido cheio de plataformas e canos.",
-            listOf(R.drawable.mushroom2, R.drawable.mushroom3, R.drawable.mushroom4)),
+            listOf(R.drawable.mushroom2, R.drawable.mushroom3, R.drawable.mushroom4), 2.0f),
         Mundo(6, "Zootopia", R.drawable.zootopia1, "Uma metrópole moderna habitada por animais.",
-            listOf(R.drawable.zootopia2, R.drawable.zootopia3, R.drawable.zootopia1)),
+            listOf(R.drawable.zootopia2, R.drawable.zootopia3, R.drawable.zootopia1), 1.0f),
         Mundo(7, "Westeros", R.drawable.westeros1, "Um continente de intrigas, gelo e dragões.",
-            listOf(R.drawable.westeros2, R.drawable.westeros3, R.drawable.westeros4)),
+            listOf(R.drawable.westeros2, R.drawable.westeros3, R.drawable.westeros4), 5.0f),
         Mundo(8, "O Condado", R.drawable.shire1, "Colinas verdes, tocas aconchegantes e muita comida.",
-            listOf(R.drawable.shire1, R.drawable.shire2, R.drawable.shire1))
+            listOf(R.drawable.shire1, R.drawable.shire2, R.drawable.shire1), 0.0f)
     )
 
     // --- PERGUNTAS ---
