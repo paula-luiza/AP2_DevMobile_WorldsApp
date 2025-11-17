@@ -1,9 +1,10 @@
-AP2 - WorldsApp: Agência de Viagens Multiverso
+# AP2 - WorldsApp: Agência de Viagens Multiverso
 
-Aluna: [Seu Nome Aqui]
-Curso: [Nome da Disciplina/Curso]
+**Aluna**: Paula Oliveira
+**Matrícula**: 202309747511
+**Curso**: Engenharia de Software
 
-Descrição do Projeto
+### Descrição do Projeto
 
 O WorldsApp é um aplicativo de quiz interativo desenvolvido para a Avaliação Parcial 2 (AP2). O app funciona como uma "agência de viagens" para mundos fictícios, mapeando a personalidade e os interesses do usuário para recomendar um destino de viagem ideal.
 
@@ -11,7 +12,7 @@ Baseado em um quiz de 5 perguntas, o app coleta as preferências do usuário em 
 
 Ao final, o app apresenta o mundo vencedor e uma tela de detalhes com mais informações, uma galeria de imagens e a opção de compartilhar o destino.
 
-Funcionalidades Principais:
+### Funcionalidades Principais:
 
 Quiz de Personalidade: 5 perguntas com opções visuais (com imagens) e textuais (sem imagens).
 
@@ -23,7 +24,7 @@ Tela de Detalhes: Uma tela (DetalhesResultados) com mais informações, incluind
 
 Navegação Completa: Inclui Intents Explícitas (para navegar entre as telas) e Implícitas (para compartilhar o resultado).
 
-Fluxo de Uso (Instruções de Execução)
+### Fluxo de Uso (Instruções de Execução)
 
 Tela Inicial: O usuário é recebido com o título do app e uma prévia dos mundos em um scroll horizontal. Ele deve inserir seu nome e clicar em "Iniciar a Viagem".
 
@@ -45,7 +46,7 @@ Tela de Detalhes: Clicando em "Saber Mais", o usuário pode ver uma descrição,
 
 Finalização: O usuário pode "Compartilhar" o resultado (abre o Google) ou "Voltar ao Início" (que limpa o placar e o histórico de telas).
 
-Telas do Aplicativo (Prints)
+### Telas do Aplicativo (Prints)
 
 Aqui estão as principais telas do aplicativo em funcionamento:
 
