@@ -2,6 +2,8 @@ package com.example.ap2_app
 
 class LogicaQuiz {
 
+    // --- MUNDOS (RESULTADOS) ---
+    // A ordem é importante! (Índice 0 = ID 1, Índice 7 = ID 8)
     val mundos = listOf(
         Mundo(1, "Hyrule", R.drawable.hyrule1, "Um reino de lendas, espadas e magia antiga.",
             listOf(R.drawable.hyrule4, R.drawable.hyrule2, R.drawable.hyrule3), 4.0f),
@@ -21,110 +23,113 @@ class LogicaQuiz {
             listOf(R.drawable.shire1, R.drawable.shire2, R.drawable.shire1), 0.0f)
     )
 
-    // --- PERGUNTAS ---
+    // --- PERGUNTAS (Com pesos e pares quebrados) ---
     private val bancoDePerguntas = listOf(
 
-        // PERGUNTA 1: MEIO DE TRANSPORTE (Imagens de veículos/montarias)
+        // Pergunta 0: Foco em Aventura vs. Tecnologia vs. Conforto
         Pergunta(
             0,
             "Qual seria seu meio de transporte ideal?",
             opcoes = listOf(
-                // Hyrule (1) & Westeros (7) -> Montaria Épica
-                Opcao("Cavalo de guerra ou Dragão", listOf(1, 7)),
+                // Aventura Medieval Pura (Hyrule, Westeros)
+                Opcao("Cavalo de guerra ou Dragão", listOf(1, 1, 7), R.drawable.parque_velocicoaster), // +2 Hyrule, +1 Westeros
 
-                // Tatooine (3) & Pandora (4) -> Voo/SciFi
-                Opcao("Nave espacial ou Banshee", listOf(3, 4)),
+                // Sci-Fi (Tatooine, Pandora)
+                Opcao("Nave espacial ou Banshee", listOf(3, 3, 4), R.drawable.parque_soarin), // +2 Tatooine, +1 Pandora
 
-                // Hogwarts (2) & Condado (8) -> Mágico/Rústico
-                Opcao("Trem a vapor ou Carroça", listOf(2, 8)),
+                // Conforto (Hogwarts, Condado)
+                Opcao("Trem a vapor ou Carroça", listOf(2, 8, 8), R.drawable.parque_pirates), // +1 Hogwarts, +2 Condado
 
-                // Mushroom (5) & Zootopia (6) -> Veículos Motorizados
-                Opcao("Kart de corrida ou Carro", listOf(5, 6))
+                // Diversão (Mushroom, Zootopia)
+                Opcao("Kart de corrida ou Carro", listOf(5, 5, 6), R.drawable.parque_toystory) // +2 Mushroom, +1 Zootopia
             )
         ),
 
-        // PERGUNTA 2: PARQUES DA DISNEY (Imagens de atrações)
+        // Pergunta 1: Foco em Adrenalina vs. Imersão
         Pergunta(
             1,
             "Qual tipo de atração você corre para ir em um parque de diversões?",
             opcoes = listOf(
-                // Tatooine (3) & Pandora (4) -> Simuladores Imersivos
-                Opcao("Simulador de Voo", listOf(3, 4), R.drawable.parque_soarin),
+                // Imersão Sci-Fi
+                Opcao("Simulador de Voo", listOf(3, 4, 4), R.drawable.parque_soarin), // +1 Tatooine, +2 Pandora
 
-                // Hyrule (1) & Westeros (7) -> Emoção/Montanha-russa
-                Opcao("Montanha-russa", listOf(1, 7), R.drawable.parque_velocicoaster),
+                // Adrenalina Pura
+                Opcao("Montanha-russa", listOf(1, 5, 5), R.drawable.parque_velocicoaster), // +1 Hyrule, +2 Mushroom
 
-                // Mushroom (5) & Zootopia (6) -> Competição/Diversão
-                Opcao("Atração Interativa/Competitiva", listOf(5, 6), R.drawable.parque_toystory),
+                // Diversão casual
+                Opcao("Atração Interativa/Competitiva", listOf(6, 6, 5), R.drawable.parque_toystory), // +2 Zootopia, +1 Mushroom
 
-                // Hogwarts (2) & Condado (8) -> Dark Ride/História
-                Opcao("Passeio de Barco no Escuro", listOf(2, 8), R.drawable.parque_pirates)
+                // História e Atmosfera
+                Opcao("Passeio de Barco no Escuro", listOf(2, 7, 8), R.drawable.parque_pirates) // +1 Hogwarts, +1 Westeros, +1 Condado
             )
         ),
 
-        // PERGUNTA 3: FILMES (Imagens de cartazes ou gêneros)
+        // Pergunta 2: Foco em Poder vs. Magia vs. Velocidade
         Pergunta(
             2,
-            "Que gênero de filme você escolheria para hoje à noite?",
+            "Qual tipo de Pokémon seria seu fiel escudeiro na viagem?",
             opcoes = listOf(
-                // Hogwarts (2) & Condado (8) -> Fantasia Pura
-                Opcao("Fantasia e Magia", listOf(2, 8), R.drawable.filme_lotr),
+                // Magia e Natureza
+                Opcao("Tipo Fada ou Planta", listOf(2, 8, 4), R.drawable.pokemon_fairy), // +1 Hogwarts, +1 Condado, +1 Pandora
 
-                // Mushroom (5) & Zootopia (6) -> Animação
-                Opcao("Animação e Comédia", listOf(5, 6), R.drawable.filme_toystory),
+                // Poder Bruto
+                Opcao("Tipo Dragão ou Aço", listOf(1, 7, 7), R.drawable.pokemon_dragonite), // +1 Hyrule, +2 Westeros
 
-                // Hyrule (1) & Westeros (7) -> Ação Medieval
-                Opcao("Ação Épica e Batalhas", listOf(1, 7), R.drawable.filme_gladiador),
+                // Velocidade e Energia
+                Opcao("Tipo Elétrico ou Voador", listOf(4, 5, 5), R.drawable.pokemon_eletrico), // +1 Pandora, +2 Mushroom
 
-                // Tatooine (3) & Pandora (4) -> Sci-Fi
-                Opcao("Ficção Científica", listOf(3, 4), R.drawable.filme_dune)
+                // Confiável e Moderno
+                Opcao("Tipo Normal ou Lutador", listOf(1, 6, 6), R.drawable.pokemon_lutador) // +1 Hyrule, +2 Zootopia
             )
         ),
 
-        // PERGUNTA 4: PERSONALIDADE (SEM IMAGENS - TEXTO APENAS)
-        // Nota: Usamos '0' no ID da imagem para ativar seu layout de 1 coluna!
+        // Pergunta 3: Foco em Gênero
         Pergunta(
             3,
-            "Como seus amigos descreveriam sua personalidade?",
+            "Que gênero de filme você escolheria para hoje à noite?",
             opcoes = listOf(
-                // Hyrule (1) & Westeros (7) -> Líderes/Corajosos
-                Opcao("Corajoso(a), determinado(a) e um pouco intenso(a).", listOf(1, 7), 0),
+                // Magia Pura
+                Opcao("Fantasia e Magia", listOf(2, 2, 8), R.drawable.filme_lotr), // +2 Hogwarts, +1 Condado
 
-                // Tatooine (3) & Pandora (4) -> Exploradores
-                Opcao("Curioso(a), inovador(a) e com a cabeça nas nuvens.", listOf(3, 4), 0),
+                // Diversão Leve
+                Opcao("Animação e Comédia", listOf(5, 6, 6), R.drawable.filme_toystory), // +1 Mushroom, +2 Zootopia
 
-                // Hogwarts (2) & Condado (8) -> Leais/Caseiros
-                Opcao("Leal, sábio(a) e que valoriza o conforto e amigos.", listOf(2, 8), 0),
+                // Ação Épica
+                Opcao("Ação Épica e Batalhas", listOf(1, 1, 7), R.drawable.filme_gladiador), // +2 Hyrule, +1 Westeros
 
-                // Mushroom (5) & Zootopia (6) -> Energéticos
-                Opcao("Energético(a), otimista e sempre pronto(a) pra agitação.", listOf(5, 6), 0)
+                // Sci-Fi Puro
+                Opcao("Ficção Científica", listOf(3, 3, 4), R.drawable.filme_dune) // +2 Tatooine, +1 Pandora
             )
         ),
 
-                Pergunta(
-                4,
-        "Qual tipo de Pokémon seria seu fiel escudeiro na viagem?",
-        opcoes = listOf(
-            // Hogwarts (2) & Condado (8) -> Místicos e Naturais
-            Opcao("Tipo Fada ou Planta (Ex: Celebi, Sylveon)", listOf(2, 8), R.drawable.pokemon_fairy),
+        // Pergunta 4: Foco em Personalidade (Sem Imagem)
+        Pergunta(
+            4,
+            "Como seus amigos descreveriam sua personalidade?",
+            opcoes = listOf(
+                // Determinado
+                Opcao("Corajoso(a), determinado(a) e um pouco intenso(a).", listOf(1, 7, 7), 0), // +1 Hyrule, +2 Westeros
 
-            // Hyrule (1) & Westeros (7) -> Poderosos e Resistentes
-            Opcao("Tipo Dragão ou Aço (Ex: Charizard, Lucario)", listOf(1, 7), R.drawable.pokemon_dragonite),
+                // Sonhador
+                Opcao("Curioso(a), inovador(a) e com a cabeça nas nuvens.", listOf(3, 4, 4), 0), // +1 Tatooine, +2 Pandora
 
-            // Tatooine (3) & Pandora (4) -> Energéticos e Voadores
-            Opcao("Tipo Elétrico ou Voador (Ex: Pikachu, Zapdos)", listOf(3, 4), R.drawable.pokemon_eletrico),
+                // Confiável
+                Opcao("Leal, sábio(a) e que valoriza o conforto e amigos.", listOf(2, 2, 8), 0), // +2 Hogwarts, +1 Condado
 
-            // Mushroom (5) & Zootopia (6) -> Amigáveis e Lutadores
-            Opcao("Tipo Normal ou Lutador (Ex: Eevee, Machamp)", listOf(5, 6), R.drawable.pokemon_lutador)
+                // Otimista
+                Opcao("Energético(a), otimista e sempre pronto(a) pra agitação.", listOf(5, 6), 0) // +1 Mushroom, +1 Zootopia
+            )
         )
     )
-    )
+
+    // --- FUNÇÕES (NENHUMA MUDANÇA NECESSÁRIA AQUI) ---
 
     fun criarPlacarInicial(): IntArray {
         return IntArray(mundos.size)
     }
 
     fun registrarResposta(pontuacaoHerois: IntArray, heroiIds: List<Int>) {
+        // Esta lógica NÃO MUDA. O loop vai rodar mais vezes para IDs repetidos.
         for (id in heroiIds) {
             val index = id - 1 // Converte ID (1-8) para índice (0-7)
             if (index >= 0 && index < pontuacaoHerois.size) {
@@ -134,7 +139,11 @@ class LogicaQuiz {
     }
 
     fun getPergunta(id: Int): Pergunta {
-        return bancoDePerguntas[id]
+        // Adicionando uma checagem de segurança para não crashar
+        if (id >= 0 && id < bancoDePerguntas.size) {
+            return bancoDePerguntas[id]
+        }
+        return bancoDePerguntas[0] // Retorna a primeira pergunta em caso de erro
     }
 
     fun getPontuacaoCompleta(pontuacaoHerois: IntArray): IntArray {
@@ -142,6 +151,7 @@ class LogicaQuiz {
     }
 
     fun getResultadoFinal(pontuacaoHerois: IntArray): Mundo {
+        // Esta lógica NÃO MUDA.
         val indiceVencedor = pontuacaoHerois.indices.maxByOrNull { pontuacaoHerois[it] } ?: 0
         return mundos[indiceVencedor]
     }
