@@ -26,7 +26,6 @@ class QuizImagens : Fragment(R.layout.fragment_quiz_imagens) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Encontra as views
         tvPergunta = view.findViewById(R.id.tvTitle)
         progressBar = view.findViewById(R.id.progressBar)
         flowGrid = view.findViewById(R.id.flow_grid)
@@ -39,7 +38,7 @@ class QuizImagens : Fragment(R.layout.fragment_quiz_imagens) {
         pergunta = logica.getPergunta(indiceDaPergunta)
 
         tvPergunta.text = pergunta.textoDaPergunta
-        progressBar.progress = (indiceDaPergunta + 1) * 25
+        progressBar.progress = (indiceDaPergunta + 1) * 20
 
         val hasImages = pergunta.opcoes.any { it.imagem != 0 }
 
