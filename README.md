@@ -52,20 +52,20 @@ Aqui estão as principais telas do aplicativo em funcionamento:
 
 1. Tela Inicial
 
-(Espaço para o print da activity_main.xml mostrando o título, o scroll horizontal de ícones e o card para inserir o nome)
+<img width="366" height="724" alt="image" src="https://github.com/user-attachments/assets/9a8f7360-6f44-4138-8d79-5335251936f3" />
 
 2. Quiz com Imagens (2 Colunas)
 
-(Espaço para o print do fragment_quiz_imagens.xml mostrando uma pergunta com 2 colunas de opções com imagens)
+<img width="350" height="723" alt="image" src="https://github.com/user-attachments/assets/22a8da6e-f2ed-4a99-97b5-e8b21daa724f" />
 
 3. Quiz sem Imagens (1 Coluna)
 
-(Espaço para o print do fragment_quiz_imagens.xml mostrando a pergunta de personalidade, com as 4 opções de texto em 1 coluna)
+<img width="348" height="717" alt="image" src="https://github.com/user-attachments/assets/46ad62c8-c34f-4477-abcc-6e240d0d1ae6" />
 
 4. Tela de Resultado
 
-(Espaço para o print da activity_resultados.xml mostrando o nome do usuário, o mundo vencedor e a imagem principal)
+<img width="354" height="715" alt="image" src="https://github.com/user-attachments/assets/4322445f-91db-47d7-a8f8-a277f1517670" />
 
 5. Tela de Detalhes
 
-(Espaço para o print da activity_detalhes_resultados.xml mostrando a galeria de imagens, a descrição e o RatingBar)
+<img width="345" height="733" alt="image" src="https://github.com/user-attachments/assets/ef43a823-b1aa-4643-9c2e-db5174b4c737" />
